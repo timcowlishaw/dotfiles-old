@@ -57,9 +57,9 @@ bash_prompt() {
 	local BGC='\[\033[46m\]'
 	local BGW='\[\033[47m\]'
 
-  if [[ -s "~/.host_prompt_colours" ]]
+  if [[ -s "$HOME/.host_prompt_colours" ]]
   then
-    source "~/.host_prompt_colours"
+    source "$HOME/.host_prompt_colours"
   else
     local PC1=$EMG
     local PC2=$W
