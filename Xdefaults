@@ -1,0 +1,10 @@
+#include "/home/tim/.dotfiles/lib/solarized/xresources-colors-solarized/Xresources"
+
+URxvt.depth: 32
+URxvt*saveLines: 12000
+URxvt*font: xft:Mensch:pixelsize=16:antialias=true:hinting=true
+URxvt*boldFont: xft:Mensch:pixelsize=16:antialias=true:hinting=true
+URxvt*scrollBar: true
+URxvt*scrollBar_right: true
+URxvt*scrollstyle: plain
+URxvt*letterSpace: -1
