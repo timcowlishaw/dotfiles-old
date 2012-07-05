@@ -51,16 +51,16 @@ myLayout = chatLayout $ videoLayout $ defaultLayout
 
 main :: IO ()
 main = do
-  xmproc <- spawnPipe "/home/tim/.cabal/bin/xmobar /home/tim/.xmobarrc"
-  xmonad $ gnomeConfig {
+  xmproc <- spawnPipe "/usr/bin/xmobar /home/tim/.xmobarrc"
+  xmonad $ defaultConfig {
     terminal = "urxvt"
     , workspaces = ["1:web", "2:term", "3:vim", "4:read", "5:chat", "6:mail", "7:music", "8:video", "9", "0"]
     , normalBorderColor = "#002b36"
     , focusedBorderColor = "#839496"
     , borderWidth = 1
-    , manageHook = manageHook gnomeConfig <+> composeAll myManageHooks
+    , manageHook = composeAll myManageHooks
     , layoutHook = myLayout
-    , logHook    = logHook gnomeConfig <+> dynamicLogWithPP xmobarPP {
+    , logHook    = dynamicLogWithPP xmobarPP {
        ppOutput = hPutStrLn xmproc,
        ppTitle = xmobarColor "#2aa198" "" . shorten 50,
        ppCurrent = xmobarColor "#268bd2" "" . wrap "[" "]",
