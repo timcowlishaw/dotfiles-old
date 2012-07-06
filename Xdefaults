@@ -2,8 +2,8 @@
 
 URxvt.depth: 32
 URxvt*saveLines: 12000
-URxvt*font: xft:Mensch:pixelsize=16:antialias=true:hinting=true
-URxvt*boldFont: xft:Mensch:pixelsize=16:antialias=true:hinting=true
+URxvt*font: xft:Mensch:pixelsize=12:antialias=true:hinting=true
+URxvt*boldFont: xft:Mensch:pixelsize=12:antialias=true:hinting=true
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
 URxvt*scrollstyle: plain
