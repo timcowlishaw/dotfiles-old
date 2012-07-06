@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 vnoremap <Left> h
 vnoremap <Right> l
 vnoremap <Up> k
