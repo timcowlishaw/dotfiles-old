@@ -5,5 +5,5 @@ xrdb -merge ~/.dotfiles/lib/solarized/xresources-colors-solarized/Xresources
 xrdb -merge ~/.Xdefaults
 xsetroot -solid '#002b36'
 xscreensaver -no-splash &
-
+parcellite &
 exec xmonad
