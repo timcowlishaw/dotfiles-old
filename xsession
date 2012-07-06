@@ -4,5 +4,6 @@ trayer --edge top --align right --SetDockType true  --expand true --width 10 --h
 xrdb -merge ~/.dotfiles/lib/solarized/xresources-colors-solarized/Xresources
 xrdb -merge ~/.Xdefaults
 xsetroot -solid '#002b36'
+xscreensaver -no-splash &
 
 exec xmonad
