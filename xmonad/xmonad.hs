@@ -16,6 +16,13 @@ import XMonad.Hooks.SetWMName
 import XMonad.Layout.PerWorkspace
 import XMonad.Util.Run(spawnPipe)
 import System.IO
+import qualified Data.Map as M
+
+
+myKeys :: XConfig Layout -> M.Map (ButtonMask, KeySym) (X ())
+myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList [
+ ((modm, xK_p), spawn "/home/tim/.dotfiles/util/dmenu_run")]
+
 myManageHooks :: [ManageHook]
 myManageHooks =
   [ resource =? "Do" --> doIgnore
@@ -53,7 +60,8 @@ main :: IO ()
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar /home/tim/.xmobarrc"
   xmonad $ defaultConfig {
-    terminal = "urxvt"
+    keys = myKeys <+> keys defaultConfig 
+    , terminal = "urxvt"
     , workspaces = ["1:web", "2:term", "3:vim", "4:read", "5:chat", "6:mail", "7:music", "8:video", "9", "0"]
     , normalBorderColor = "#002b36"
     , focusedBorderColor = "#839496"

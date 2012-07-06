@@ -1,0 +1,2 @@
+#!/bin/sh
+exec dmenu_run -nb '#002b36' -nf '#657b83' -sb '#073642' -sf '#cb4b16' "$@"
