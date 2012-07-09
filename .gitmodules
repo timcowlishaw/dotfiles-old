@@ -16,3 +16,6 @@
 [submodule "lib/vimbundles/vim-surround"]
 	path = lib/vimbundles/vim-surround
 	url = git://github.com/tpope/vim-surround.git
+[submodule "lib/irssi-colors-solarized"]
+	path = lib/irssi-colors-solarized
+	url = git://github.com/huyz/irssi-colors-solarized.git
