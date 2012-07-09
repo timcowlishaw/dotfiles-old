@@ -1,0 +1,27 @@
+[user]
+        name=Tim Cowlishaw
+        email=tim@timcowlishaw.co.uk
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        interactive = auto
+        ui = true
+        pager = true
+
+[color "branch"]
+        current = yellow reverse
+        local = yellow
+        remote = green
+
+[color "diff"]
+        meta = yellow
+        frag = magenta
+        old = red
+        new = green
+
+[color "status"]
+        added = yellow
+        changed = green
+        untracked = cyan
+
