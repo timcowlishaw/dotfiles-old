@@ -6,5 +6,6 @@ URxvt*font: xft:Mensch:pixelsize=12:antialias=true:hinting=true
 URxvt*boldFont: xft:Mensch:pixelsize=12:antialias=true:hinting=true
 URxvt*scrollBar: true
 URxvt*scrollBar_right: true
+URXvt*scrollColor: S_base02
 URxvt*scrollstyle: plain
 URxvt*letterSpace: -1
