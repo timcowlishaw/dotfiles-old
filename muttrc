@@ -43,4 +43,4 @@ bind attach H display-toggle-weed
 bind compose l view-attach
 bind compose <right> view-attach
 source ~/.mutt-private.muttrc
-source ~/.dotfiles/lib/solarized/mutt-colors-solarized/mutt-colors-solarized-dark-256.muttrc
+source ~/.dotfiles/lib/solarized/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
