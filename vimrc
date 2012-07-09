@@ -24,6 +24,7 @@ set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
 let g:MarkdownPreviewTMP=$HOME.'/.vim/tmp/'
 let g:MarkdownPreviewDefaultStyles = $HOME.'/.vim/stylesheets/'
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 set ofu=syntaxcomplete#Complete
 syntax on
 set background=dark
