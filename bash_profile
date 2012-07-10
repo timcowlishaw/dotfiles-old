@@ -88,3 +88,7 @@ export SCALA_HOME="/home/tim/.scala"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CLICOLOR=1
 export PATH=$HOME/.rvm/bin:$SCALA_HOME/bin:home/tim/.cabal/bin:/home/tim/bin:$PATH
+if [[ -s "$HOME/.bash_private" ]]
+then
+  source "$HOME/.bash_private"
+fi
