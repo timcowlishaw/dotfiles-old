@@ -7,3 +7,4 @@
 --ignore-dir=deps
 --ignore-dir=ebin
 --ignore-dir=.eunit
+--ignore-dir=release
