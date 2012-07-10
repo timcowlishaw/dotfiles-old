@@ -5,3 +5,5 @@ xmonad/xmonad.o
 config/chromium
 vim/view
 vim/.netrwhist
+config/spotify
+config/Trolltech.conf
