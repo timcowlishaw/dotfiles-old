@@ -81,6 +81,7 @@ if [[ -s /usr/local/etc/bash_completion.d/git-completion.bash ]] ; then source /
 alias less='less -R'
 alias ack='ack-grep'
 alias lock='xscreensaver-command -lock'
+alias be='bundle exec'
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 export GEM_EDITOR="vim"
