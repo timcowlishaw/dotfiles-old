@@ -7,3 +7,6 @@ vim/view
 vim/.netrwhist
 config/spotify
 config/Trolltech.conf
+config/dconf
+config/libreoffice
+config/vlc
