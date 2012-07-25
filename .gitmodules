@@ -19,3 +19,6 @@
 [submodule "lib/irssi-colors-solarized"]
 	path = lib/irssi-colors-solarized
 	url = git://github.com/huyz/irssi-colors-solarized.git
+[submodule "lib/vimbundles/vim-scala"]
+	path = lib/vimbundles/vim-scala
+	url = git://github.com/derekwyatt/vim-scala.git
