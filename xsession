@@ -6,4 +6,5 @@ xsetroot -solid '#002b36'
 xscreensaver -no-splash &
 parcellite &
 volumeicon &
+dropbox start
 exec xmonad
