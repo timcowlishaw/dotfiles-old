@@ -19,6 +19,7 @@ set formatoptions=1
 set lbr
 set guifont=Mensch
 set mouse=a
+set noswapfile
 set directory=~/.vimswap,.
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='latex'
