@@ -8,4 +8,5 @@ parcellite &
 volumeicon &
 command -v wicd-client && wicd-client --tray &
 dropbox start
+command -v syndaemon && syndaemon -i 0.5 -d
 exec xmonad
