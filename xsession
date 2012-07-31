@@ -6,6 +6,6 @@ xsetroot -solid '#002b36'
 xscreensaver -no-splash &
 parcellite &
 volumeicon &
-command -v wicd-client && wicd-client --tray
+command -v wicd-client && wicd-client --tray &
 dropbox start
 exec xmonad
