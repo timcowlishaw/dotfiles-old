@@ -1,5 +1,6 @@
 #include "/home/tim/.dotfiles/lib/solarized/xresources-colors-solarized/Xresources"
-
+*background: #ffffff
+URxvt*background: S_base03
 URxvt.depth: 32
 URxvt*saveLines: 12000
 URxvt*font: xft:Mensch:pixelsize=12:antialias=true:hinting=true
