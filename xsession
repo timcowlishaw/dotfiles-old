@@ -10,4 +10,4 @@ volumeicon &
 command -v wicd-client && wicd-client --tray &
 dropbox start
 command -v syndaemon && syndaemon -i 0.5 -k -d
-exec xmonad
+exec ssh-agent xmonad
