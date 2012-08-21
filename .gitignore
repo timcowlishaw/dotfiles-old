@@ -10,3 +10,5 @@ config/Trolltech.conf
 config/dconf
 config/libreoffice
 config/vlc
+config/geeqie
+config/ipython
