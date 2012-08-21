@@ -25,44 +25,31 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList [
 
 myManageHooks :: [ManageHook]
 myManageHooks =
-  [ resource =? "Do" --> doIgnore
-  , isFullscreen --> doFullFloat
+  [ isFullscreen --> doFullFloat
   , className =? "Chromium-browser" --> viewShift "1:web"
-  --, className =? "Gnome-terminal" --> doShift "2:term"
-  , appName   =? "vim" --> viewShift "3:vim"
   , className =? "Evince" --> viewShift "4:read"
   , className =? "MendeleyDesktop" --> viewShift "4:read"
-  , className =? "psi" --> viewShift "5:chat"
-  , className =? "Gajim" --> viewShift "5:chat"
-  , className =? "Skype" --> viewShift "5:chat"
-  , className =? "Balsa" --> viewShift "6:mail"
-  , appName   =? "mutt" --> viewShift "6:mail"
-  , className =? "Rhythmbox" --> viewShift "7:music"
-  , className =? "Spotify" --> viewShift "7:music"
-  , className =? "Gmpc" --> viewShift "7:music"
-  , className =? "Vlc" --> viewShift "8:video"
+  , className =? "Rhythmbox" --> viewShift "6:music"
+  , className =? "Spotify" --> viewShift "6:music"
+  , className =? "Gmpc" --> viewShift "6:music"
+  , className =? "Vlc" --> viewShift "7"
   , manageDocks
   ]
   where viewShift = doF . liftM2 (.) W.greedyView W.shift
 
-myLayout = chatLayout $ videoLayout $ defaultLayout
-  where
-    chatLayout = onWorkspace "5:chat" (avoidStruts $ withIM (1%7) chatWindows (Grid ||| simpleTabbed))
-    videoLayout = onWorkspace "8:video" (smartBorders Full)
-    defaultLayout = avoidStruts tiled ||| avoidStruts (Mirror tiled) ||| avoidStruts Grid ||| avoidStruts simpleTabbed ||| smartBorders Full
-    chatWindows = (ClassName "Skype" `And` Resource "skype") `Or` (ClassName "psi" `And` Resource "main") `Or` (ClassName "Gajim" `And` Role "roster")
-    tiled   = Tall nmaster delta ratio
-    nmaster = 1
-    ratio   = 2/3
-    delta   = 3/100
+myLayout = avoidStruts tiled ||| avoidStruts (Mirror tiled) ||| avoidStruts Grid ||| smartBorders Full
+    where tiled   = Tall nmaster delta ratio
+          nmaster = 1
+          ratio   = 2/3
+          delta   = 3/100
 
 main :: IO ()
 main = do
   xmproc <- spawnPipe "/usr/bin/xmobar /home/tim/.xmobarrc"
   xmonad $ defaultConfig {
-    keys = myKeys <+> keys defaultConfig 
+    keys = myKeys <+> keys defaultConfig
     , terminal = "urxvt"
-    , workspaces = ["1:web", "2:term", "3:vim", "4:read", "5:chat", "6:mail", "7:music", "8:video", "9", "0"]
+    , workspaces = ["1:web", "2:term", "3:vim", "4:read", "5:comms", "6:music", "7", "8", "9", "0"]
     , normalBorderColor = "#002b36"
     , focusedBorderColor = "#839496"
     , borderWidth = 1
