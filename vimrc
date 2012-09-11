@@ -20,8 +20,8 @@ set lbr
 set guifont=Mensch
 set mouse=a
 set noswapfile
-set directory=~/.vimswap,.
 set grepprg=grep\ -nH\ $*
+let g:NERDTreeChDirMode=0
 let g:tex_flavor='latex'
 let g:MarkdownPreviewTMP=$HOME.'/.vim/tmp/'
 let g:MarkdownPreviewDefaultStyles = $HOME.'/.vim/stylesheets/'
