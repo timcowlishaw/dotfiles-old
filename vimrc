@@ -49,16 +49,26 @@ if has("autocmd")
   \ endif
 endif
 
-"turn off the arrow keys!
-noremap  <Up> ""
-noremap! <Up> <Esc>
-noremap  <Down> ""
-noremap! <Down> <Esc>
-noremap  <Left> ""
-noremap! <Left> <Esc>
-noremap  <Right> ""
-noremap! <Right> <Esc>
+"turn off the arrow keys except for in command line mode!
+inoremap  <Up> ""
+inoremap  <Down> ""
+inoremap  <Left> ""
+inoremap  <Right> ""
 
+vnoremap  <Up> ""
+vnoremap  <Down> ""
+vnoremap  <Left> ""
+vnoremap  <Right> ""
+
+nnoremap  <Up> ""
+nnoremap  <Down> ""
+nnoremap  <Left> ""
+nnoremap  <Right> ""
+
+onoremap  <Up> ""
+onoremap  <Down> ""
+onoremap  <Left> ""
+onoremap  <Right> ""
 "Useful keybindings
 noremap <C-A> :Ack
 noremap <C-T> :CommandT<CR>
