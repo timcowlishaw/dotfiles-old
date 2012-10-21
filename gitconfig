@@ -25,3 +25,7 @@
         changed = green
         untracked = cyan
 
+[push]
+	default = current
+[branch]
+	autosetuprebase = always
