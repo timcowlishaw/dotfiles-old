@@ -70,7 +70,6 @@ onoremap  <Down> ""
 onoremap  <Left> ""
 onoremap  <Right> ""
 "Useful keybindings
-noremap <C-A> :Ack
 noremap <C-T> :CommandT<CR>
 noremap <C-P> :bp<CR>
 noremap <C-N> :bn<CR>
@@ -92,6 +91,11 @@ command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | di
 "...and for NerdTree:
 let NERDTreeShowFiles=1
 let NERDTreeHighlightCursorline=1
+
+
+com R TlistToggle
+let Tlist_Use_Right_Window=1
+
 
 "from: http://vim.wikia.com/wiki/Pretty-formatting_XML
  function! DoPrettyXML()
@@ -143,3 +147,25 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+"Add Git Grep func
+func GitGrep(...)
+  let save  = &grepprg
+  set grepprg=git\ grep\ -n\ $*
+  let command = 'grep'
+  for arg in a:000
+    let command = command . ' ' . arg
+  endfor
+  silent execute command
+  botright copen
+  let &grepprg = save
+  let @/=a:000
+  set hlsearch
+  redraw!
+endfun
+command -nargs=? G call GitGrep(<f-args>)
+
+func GitGrepWord()
+  normal! "zyiw
+  call GitGrep('-w -e ', getreg('z'))
+endf
+nmap <C-x>G :call GitGrepWord()<CR>
