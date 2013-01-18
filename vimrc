@@ -49,39 +49,10 @@ if has("autocmd")
   \ endif
 endif
 
-"turn off the arrow keys except for in command line mode!
-inoremap  <Up> ""
-inoremap  <Down> ""
-inoremap  <Left> ""
-inoremap  <Right> ""
-
-vnoremap  <Up> ""
-vnoremap  <Down> ""
-vnoremap  <Left> ""
-vnoremap  <Right> ""
-
-nnoremap  <Up> ""
-nnoremap  <Down> ""
-nnoremap  <Left> ""
-nnoremap  <Right> ""
-
-onoremap  <Up> ""
-onoremap  <Down> ""
-onoremap  <Left> ""
-onoremap  <Right> ""
 "Useful keybindings
 noremap <C-T> :CommandT<CR>
-noremap <C-P> :bp<CR>
-noremap <C-N> :bn<CR>
 noremap <Nul> :BufExplorer<CR>
 
-noremap <C-J> <C-W>j
-noremap <C-K> <C-W>k
-noremap <C-H> <C-W>h
-noremap <C-L> <C-W>l
-
-noremap <C-f> <C-W>t<C-W>K
-noremap <C-g> <C-W>t<C-W>H
 set wmh=0
 vmap r "_dP
 
@@ -93,8 +64,7 @@ let NERDTreeShowFiles=1
 let NERDTreeHighlightCursorline=1
 
 
-com R TlistToggle
-let Tlist_Use_Right_Window=1
+com L TagbarToggle
 
 
 "from: http://vim.wikia.com/wiki/Pretty-formatting_XML
@@ -129,7 +99,6 @@ endfunction
 "use indents as the folding method"
 set foldmethod=indent
 set foldlevelstart=20
-
 
 "make vim save and load the folding of the document each time it loads"
 "also places the cursor in the last place that it was left."
@@ -169,3 +138,41 @@ func GitGrepWord()
   call GitGrep('-w -e ', getreg('z'))
 endf
 nmap <C-x>G :call GitGrepWord()<CR>
+
+so ~/.vim/bundle/autotag/autotag.vim
+
+let g:tagbar_type_scala = {
+    \ 'ctagstype' : 'Scala',
+    \ 'kinds'     : [
+        \ 'p:packages:1',
+        \ 'V:values',
+        \ 'v:variables',
+        \ 'T:types',
+        \ 't:traits',
+        \ 'o:objects',
+        \ 'a:aclasses',
+        \ 'c:classes',
+        \ 'r:cclasses',
+        \ 'm:methods'
+    \ ]
+\ }
+
+let g:tagbar_type_markdown = {
+	\ 'ctagstype' : 'markdown',
+	\ 'kinds' : [
+		\ 'h:Heading_L1',
+		\ 'i:Heading_L2',
+		\ 'k:Heading_L3'
+	\ ]
+\ }
+
+let g:tagbar_type_ruby = {
+    \ 'kinds' : [
+        \ 'm:modules',
+        \ 'c:classes',
+        \ 'd:describes',
+        \ 'C:contexts',
+        \ 'f:methods',
+        \ 'F:singleton methods'
+    \ ]
+\ }
