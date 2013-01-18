@@ -82,6 +82,7 @@ alias less='less -R'
 alias ack='ack-grep'
 alias lock='xscreensaver-command -lock'
 alias be='bundle exec'
+alias ssh="TERM=xterm-color ssh"
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 export GEM_EDITOR="vim"

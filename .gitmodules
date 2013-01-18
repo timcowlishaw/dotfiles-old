@@ -19,3 +19,9 @@
 [submodule "lib/vimbundles/vim-scala"]
 	path = lib/vimbundles/vim-scala
 	url = git://github.com/derekwyatt/vim-scala.git
+[submodule "lib/vimbundles/autotag"]
+	path = lib/vimbundles/autotag
+	url = https://github.com/marcus/autotag.vim
+[submodule "lib/vimbundles/tagbar"]
+	path = lib/vimbundles/tagbar
+	url = git://github.com/majutsushi/tagbar.git
