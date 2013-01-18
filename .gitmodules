@@ -25,3 +25,6 @@
 [submodule "lib/vimbundles/tagbar"]
 	path = lib/vimbundles/tagbar
 	url = git://github.com/majutsushi/tagbar.git
+[submodule "lib/urxvt-perls"]
+	path = lib/urxvt-perls
+	url = git://github.com/muennich/urxvt-perls.git

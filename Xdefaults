@@ -1,5 +1,13 @@
 #include "/home/tim/.dotfiles/lib/solarized/xresources-colors-solarized/Xresources"
 *background: #ffffff
+URxvt.perl-ext-common:  default,matcher
+URxvt.url-launcher:      /usr/bin/chromium
+URxvt.matcher.button:   1
+URxvt.perl-lib: /home/tim/.dotfiles/lib/urxvt-perls/
+URxvt.perl-ext:      default,url-select
+URxvt.keysym.C-o:    perl:url-select:select_next
+URxvt.url-select.launcher:   /usr/bin/chromium
+URxvt.url-select.underline: true
 URxvt*background: S_base03
 URxvt.depth: 32
 URxvt*saveLines: 12000
