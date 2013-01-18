@@ -12,3 +12,13 @@ config/libreoffice
 config/vlc
 config/geeqie
 config/ipython
+config/Mendeley Ltd.
+config/Skype
+config/calibre
+config/evince
+config/menus
+config/transmission
+config/xfce4
+config/yelp
+fonts/*
+!fonts/mensch.ttf
