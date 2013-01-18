@@ -93,6 +93,7 @@ export BROWSER="chromium-browser"
 export DESKTOP_SESSION="xfce"
 export PATH=$HOME/.rvm/bin:$SCALA_HOME/bin:home/tim/.cabal/bin:/home/tim/bin:$PATH
 complete -W "$(teamocil --list)" teamocil
+setxkbmap -option caps:none
 if [[ -s "$HOME/.bash_private" ]]
 then
   source "$HOME/.bash_private"

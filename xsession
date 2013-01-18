@@ -10,4 +10,5 @@ volumeicon &
 command -v wicd-client && wicd-client --tray &
 dropbox start
 command -v syndaemon && syndaemon -i 0.5 -k -d
+setxkbmap -option caps:none
 exec ssh-agent xmonad
