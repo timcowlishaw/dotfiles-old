@@ -1,0 +1,15 @@
+session:
+  name: "quietus-deploy"
+  windows:
+    - name: "shell"
+      root: "~/src/quietus-puppet"
+      splits:
+        - cmd: "git status"
+        - cmd: "ssh deploy@ads.thequietus.com"
+          width: 66
+        - cmd: "ssh deploy@web.thequietus.com"
+          width: 50
+    - name: "vim"
+      root: "~/src/quietus-puppet"
+      splits:
+        - cmd: "vim ."
