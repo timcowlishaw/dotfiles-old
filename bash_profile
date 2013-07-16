@@ -86,12 +86,12 @@ alias ssh="TERM=xterm-color ssh"
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 export GEM_EDITOR="vim"
-export SCALA_HOME="/home/tim/.scala"
+export SCALA_HOME="/usr/local/scala"
 export _JAVA_AWT_WM_NONREPARENTING=1
 export CLICOLOR=1
 export BROWSER="chromium-browser"
 export DESKTOP_SESSION="xfce"
-export PATH=$HOME/.rvm/bin:$SCALA_HOME/bin:home/tim/.cabal/bin:/home/tim/bin:$PATH
+export PATH=$HOME/.rvm/bin:$SCALA_HOME/bin:/home/tim/.cabal/bin:/home/tim/bin:$PATH
 complete -W "$(teamocil --list)" teamocil
 setxkbmap -option caps:none
 if [[ -s "$HOME/.bash_private" ]]
