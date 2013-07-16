@@ -5,10 +5,11 @@ xrdb -merge ~/.Xdefaults
 xsetroot -solid '#002b36'
 xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 xscreensaver -no-splash &
+edit-server &
 parcellite &
 volumeicon &
 command -v wicd-client && wicd-client --tray &
 dropbox start
-command -v syndaemon && syndaemon -i 0.5 -k -d
+command -v syndaemon && syndaemon -t -i 2 -k -d
 setxkbmap -option caps:none
 exec ssh-agent xmonad
