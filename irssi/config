@@ -3,13 +3,13 @@ servers = (
   { address = "eu.irc6.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
   { address = "irc.efnet.org"; chatnet = "EFNet"; port = "6667"; },
-  { 
+  {
     address = "irc.undernet.org";
     chatnet = "Undernet";
     port = "6667";
   },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  { 
+  {
     address = "irc.quakenet.org";
     chatnet = "QuakeNet";
     port = "6667";
@@ -31,6 +31,15 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "yes";
+  },
+  {
+    address = "localhost";
+    chatnet = "camper_van";
+    port = "6668";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+    password = "";
   }
 );
 
@@ -42,7 +51,7 @@ chatnets = {
     max_whois = "4";
     max_query_chans = "5";
   };
-  EFNet = { 
+  EFNet = {
     type = "IRC";
     max_kicks = "4";
     max_msgs = "3";
@@ -66,7 +75,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  OFTC = { 
+  OFTC = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -84,7 +93,7 @@ chatnets = {
     max_msgs = "3";
     max_whois = "30";
   };
-  Rizon = { 
+  Rizon = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "3";
@@ -102,13 +111,15 @@ chatnets = {
     type = "IRC";
     autosendcmd = "/join &bitlbee; /msg &bitlbee identify tim; wait 2000";
   };
+  camper_van = { type = "IRC"; };
 };
 
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
-  { name = "#msp"; chatnet = "BitlBee"; autojoin = "yes"; },
-  { name = "#msp-dev"; chatnet = "BitlBee"; autojoin = "yes"; }
+  { name = "#msp"; chatnet = "BitlBee"; autojoin = "No"; },
+  { name = "#msp-dev"; chatnet = "BitlBee"; autojoin = "No"; },
+  { name = "main"; chatnet = "camper_van"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -286,50 +297,5 @@ hilights = (
   { text = "mistertim"; color = "%M"; nick = "yes"; word = "yes"; },
   { text = "tim"; color = "%M"; nick = "yes"; word = "yes"; }
 );
-windows = {
-  1 = {
-    immortal = "yes";
-    name = "(status)";
-    level = "ALL";
-    sticky = "yes";
-    parent = "4";
-  };
-  2 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "&bitlbee";
-        tag = "BitlBee";
-      }
-    );
-    sticky = "yes";
-    parent = "4";
-  };
-  3 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#msp-dev";
-        tag = "BitlBee";
-      }
-    );
-    sticky = "yes";
-  };
-  4 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#msp";
-        tag = "BitlBee";
-      }
-    );
-    sticky = "yes";
-  };
-};
-mainwindows = {
-  4 = { first_line = "31"; lines = "29"; };
-  3 = { first_line = "1"; lines = "30"; };
-};
+windows = { 1 = { immortal = "yes"; name = "(status)"; level = "ALL"; }; };
+mainwindows = { 1 = { first_line = "1"; lines = "50"; }; };
