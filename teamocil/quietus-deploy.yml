@@ -5,11 +5,17 @@ session:
       root: "~/src/quietus-puppet"
       splits:
         - cmd: "git status"
-        - cmd: "ssh deploy@ads.thequietus.com"
-          width: 66
+          focus: true
         - cmd: "ssh deploy@web.thequietus.com"
-          width: 50
-    - name: "vim"
+          h: 50
+        - cmd: "ssh deploy@ads.thequietus.com"
+          w: 50
+          target: "bottom-right"
+    - name: "vim-puppet"
       root: "~/src/quietus-puppet"
+      splits:
+        - cmd: "vim ."
+    - name: "vim-app"
+      root: "~/src/quietus"
       splits:
         - cmd: "vim ."

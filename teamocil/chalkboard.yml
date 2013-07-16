@@ -1,0 +1,22 @@
+session:
+  name: "chalkboard"
+  windows:
+    - name: "shell"
+      root: "~/src/chalkboard"
+      filters:
+        before:
+          - "export PATH=cbenv/bin:$PATH"
+      splits:
+        - cmd: "git status"
+        - cmd: "xvfb-run sniffer"
+          width: 50
+        - cmd: "pserve development.ini"
+          height: 50
+          target: "bottom-right"
+    - name: "vim"
+      root: "~/src/chalkboard"
+      filters:
+        before:
+          - "export PATH=cbenv/bin:$PATH"
+      splits:
+        - cmd: "vim ."

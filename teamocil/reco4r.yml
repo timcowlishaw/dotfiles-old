@@ -1,0 +1,17 @@
+session:
+  name: "reco4r"
+  windows:
+    - name: "shell"
+      root: "~/src/reco4r"
+      splits:
+        - cmd: "git status"
+        - cmd: "bundle console"
+          width: 50
+        - cmd: "bundle exec guard"
+          height: 75
+        - cmd: "server"
+          height: 25
+    - name: "vim"
+      root: "~/src/reco4r"
+      splits:
+        - cmd: "vim ."

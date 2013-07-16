@@ -1,0 +1,13 @@
+session:
+  name: "chid-middleware"
+  windows:
+    - name: "shell"
+      root: "~/src/cambridge_healthcare/chid-middleware"
+      splits:
+        - cmd: "git status"
+        - cmd: "bundle console"
+          width: 50
+    - name: "vim"
+      root: "~/src/cambridge_healthcare/chid-middleware"
+      splits:
+        - cmd: "vim ."

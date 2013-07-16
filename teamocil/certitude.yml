@@ -1,0 +1,16 @@
+session:
+  name: "certitude"
+  windows:
+    - name: "shell"
+      root: "~/src/certitude"
+      splits:
+        - cmd: "git status"
+        - cmd: "be rails console"
+          width: 50
+        - cmd: "be rails server"
+          height: 50
+          target: "bottom-right"
+    - name: "vim"
+      root: "~/src/certitude"
+      splits:
+        - cmd: "vim ."
