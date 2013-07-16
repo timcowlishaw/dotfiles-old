@@ -7,6 +7,12 @@
 [submodule "lib/vimbundles/command-t"]
 	path = lib/vimbundles/command-t
 	url = git://github.com/wincent/Command-T.git
+[submodule "lib/vimbundles/command-t/vendor/vimball"]
+	path = lib/vimbundles/command-t/vendor/vimball
+	url = git://github.com/tomtom/vimball.rb.git
+[submodule "lib/vimbundles/command-t/vendor/vimscriptuploader"]
+	path = lib/vimbundles/command-t/vendor/vimscriptuploader
+	url = git://github.com/tomtom/vimscriptuploader.rb.git
 [submodule "lib/vimbundles/nerdtree"]
 	path = lib/vimbundles/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
