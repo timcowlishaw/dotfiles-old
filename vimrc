@@ -53,6 +53,18 @@ endif
 noremap <C-T> :CommandT<CR>
 noremap <Nul> :BufExplorer<CR>
 
+"navigate pup-ups with ctrl-j/k
+inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-P>" : "\<C-k>"
+
+"adding emacs keybindings for command mode
+cnoremap <c-a> <Home>
+cnoremap <c-e> <End>
+
+"navigate history with ctrl-j/k
+cnoremap <c-k> <Up>
+cnoremap <c-j> <Down>
+
 set wmh=0
 vmap r "_dP
 
@@ -99,6 +111,9 @@ endfunction
 "use indents as the folding method"
 set foldmethod=indent
 set foldlevelstart=20
+
+set textwidth=80
+set colorcolumn=+1
 
 "make vim save and load the folding of the document each time it loads"
 "also places the cursor in the last place that it was left."
