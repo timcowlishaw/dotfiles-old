@@ -52,3 +52,6 @@
 [submodule "lib/vimbundles/RltvNmbr.vim"]
 	path = lib/vimbundles/RltvNmbr.vim
 	url = git://github.com/vim-scripts/RltvNmbr.vim.git
+[submodule "lib/vimbundles/webapi-vim"]
+	path = lib/vimbundles/webapi-vim
+	url = git://github.com/mattn/webapi-vim.git

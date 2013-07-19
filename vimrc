@@ -111,7 +111,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-
+autocmd BufNewFile,BufRead  * :RltvNmbr
 "Add Git Grep func
 func GitGrep(...)
   let save  = &grepprg
@@ -222,3 +222,4 @@ map <leader><leader> gt
 map <leader><space>  :BufExplorer<CR>
 map <leader>t        :NerdTreeToggle<CR>
 map <leader>g        :G
+map <leader>gst      :Gist<CR>
