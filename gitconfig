@@ -24,7 +24,8 @@
         added = yellow
         changed = green
         untracked = cyan
-
+[alias]
+	permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
 [push]
 	default = current
 [branch]

@@ -78,6 +78,15 @@ if [[ -s /etc/bash_completion.d/git ]] ; then source /etc/bash_completion.d/git 
 if [[ -s /usr/local/etc/bash_completion.d/git-completion.bash ]] ; then source /usr/local/etc/bash_completion.d/git-completion.bash ; fi
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+function g {
+  if [[ $# > 0 ]]
+  then
+    git $@
+  else
+    git status
+  fi
+}
+
 alias less='less -R'
 alias lock='xscreensaver-command -lock'
 alias be='bundle exec'
@@ -96,3 +105,4 @@ if [[ -s "$HOME/.bash_private" ]]
 then
   source "$HOME/.bash_private"
 fi
+

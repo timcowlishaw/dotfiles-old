@@ -196,7 +196,7 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
-
+set mouse=a
 map <leader>jra      :!bundle exec rspec --no-color <CR>
 map <leader>jrf      :!bundle exec rspec --no-color % <CR>
 map <leader>jna      :!nosetests <CR>
@@ -216,7 +216,7 @@ map <leader>orf      :call OpenSpec()<CR>
 map <leader>orv      :call VsplitSpec()<CR>
 map <leader>ors      :e .rspec<CR>
 map <leader>ovr      :e ~/.vimrc<CR>
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+nnoremap <leader>h <Esc>:call HardMode()<CR>
 map <leader>bi       :!bundle install
 map <leader><leader> gt
 map <leader><space>  :BufExplorer<CR>
