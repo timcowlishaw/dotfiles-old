@@ -36,22 +36,7 @@ filetype plugin on
 filetype indent on
 filetype plugin indent on
 
-function AlwaysCD()
-  if bufname("") !~ "^ftp://"
-    lcd %:p:h
-  endif
-endfunction
-
-if has("autocmd")
-  autocmd VimEnter * call AlwaysCD()
-  \ if line("'\'") > 1 && line("'\'") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
-endif
-
 "Useful keybindings
-noremap <C-T> :CommandT<CR>
-noremap <Nul> :BufExplorer<CR>
 
 "navigate pup-ups with ctrl-j/k
 inoremap <expr> <C-j> pumvisible() ? "\<C-N>" : "\<C-j>"
@@ -114,11 +99,7 @@ set foldlevelstart=20
 
 set textwidth=80
 set colorcolumn=+1
-
-"make vim save and load the folding of the document each time it loads"
-"also places the cursor in the last place that it was left."
-au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+set showcmd
 
 command! PrettyXML call DoPrettyXML()
 
@@ -153,6 +134,30 @@ func GitGrepWord()
   call GitGrep('-w -e ', getreg('z'))
 endf
 nmap <C-x>G :call GitGrepWord()<CR>
+
+function! OpenSpec()
+  let repl = substitute(substitute(expand('%'), '\.rb', '', ''), "lib/", "spec/", "")
+  let path = repl . '_spec.rb'
+  exec('tabe ' . path)
+endfunction
+
+function! VsplitSpec()
+  let repl = substitute(substitute(expand('%'), '\.rb', '', ''), "lib/", "spec/", "")
+  let path = repl . '_spec.rb'
+  exec('vsplit ' . path)
+endfunction
+
+function! PromoteToLet()
+    :normal! dd
+    " :exec '?^\s*it\>'
+    :normal! P
+    :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
+    :normal ==
+    :normal! dd
+endfunction
+
+:command! PromoteToLet :call PromoteToLet():
+
 
 so ~/.vim/bundle/autotag/autotag.vim
 
@@ -191,3 +196,29 @@ let g:tagbar_type_ruby = {
         \ 'F:singleton methods'
     \ ]
 \ }
+
+map <leader>jra      :!bundle exec rspec --no-color <CR>
+map <leader>jrf      :!bundle exec rspec --no-color % <CR>
+map <leader>jna      :!nosetests <CR>
+map <leader>rpf      :!python % <CR>
+map <leader>rrf      :!ruby %<CR>
+map <leader>rb       :!bash <CR>
+map <leader>rv       :so ~/.vimrc <CR>
+map <leader>rm       :!touch % && make <CR>
+map <leader>lt       *<CR>
+map <leader>li       gg/def.*init<CR>
+map <leader>lcd      gg/class.*<CR>
+map <leader>lrp      /^ *p <CR>
+map <leader>eal      :Align & <CR>
+map <leader>eap      :Align => <CR>
+map <leader>epl      :PromoteToLet<cr>
+map <leader>orf      :call OpenSpec()<CR>
+map <leader>orv      :call VsplitSpec()<CR>
+map <leader>ors      :e .rspec<CR>
+map <leader>ovr      :e ~/.vimrc<CR>
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
+map <leader>bi       :!bundle install
+map <leader><leader> gt
+map <leader><space>  :BufExplorer<CR>
+map <leader>t        :NerdTreeToggle<CR>
+map <leader>g        :G

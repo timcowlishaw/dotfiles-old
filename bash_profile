@@ -79,7 +79,6 @@ if [[ -s /usr/local/etc/bash_completion.d/git-completion.bash ]] ; then source /
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 alias less='less -R'
-alias ack='ack-grep'
 alias lock='xscreensaver-command -lock'
 alias be='bundle exec'
 alias ssh="TERM=xterm-color ssh"
@@ -93,7 +92,6 @@ export BROWSER="chromium-browser"
 export DESKTOP_SESSION="xfce"
 export PATH=$HOME/.rvm/bin:$SCALA_HOME/bin:/home/tim/.cabal/bin:/home/tim/bin:$PATH
 complete -W "$(teamocil --list)" teamocil
-setxkbmap -option caps:none
 if [[ -s "$HOME/.bash_private" ]]
 then
   source "$HOME/.bash_private"

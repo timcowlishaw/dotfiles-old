@@ -4,9 +4,6 @@
 [submodule "lib/vim-pathogen"]
 	path = lib/vim-pathogen
 	url = git://github.com/tpope/vim-pathogen.git
-[submodule "lib/vimbundles/command-t"]
-	path = lib/vimbundles/command-t
-	url = git://github.com/wincent/Command-T.git
 [submodule "lib/vimbundles/command-t/vendor/vimball"]
 	path = lib/vimbundles/command-t/vendor/vimball
 	url = git://github.com/tomtom/vimball.rb.git
@@ -34,3 +31,18 @@
 [submodule "lib/urxvt-perls"]
 	path = lib/urxvt-perls
 	url = git://github.com/muennich/urxvt-perls.git
+[submodule "lib/vimbundles/hardmode"]
+	path = lib/vimbundles/hardmode
+	url = git://github.com/wikitopian/hardmode.git
+[submodule "lib/vimbundles/ctrlp.vim"]
+	path = lib/vimbundles/ctrlp.vim
+	url = git://github.com/kien/ctrlp.vim.git
+[submodule "lib/vimbundles/Align"]
+	path = lib/vimbundles/Align
+	url = git://github.com/vim-scripts/Align.git
+[submodule "lib/vimbundles/delimitMate.vi"]
+	path = lib/vimbundles/delimitMate.vi
+	url = git://github.com/vim-scripts/delimitMate.vim.git
+[submodule "lib/vimbundles/vim-endwise"]
+	path = lib/vimbundles/vim-endwise
+	url = git://github.com/tpope/vim-endwise.git
