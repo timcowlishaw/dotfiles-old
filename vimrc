@@ -28,7 +28,7 @@ let g:MarkdownPreviewDefaultStyles = $HOME.'/.vim/stylesheets/'
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 set ofu=syntaxcomplete#Complete
 syntax on
-set background=dark
+set background=light
 let g:solarized_termcolors=16
 se t_Co=16
 colorscheme solarized
@@ -111,7 +111,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-autocmd BufNewFile,BufRead  * :RltvNmbr
+"autocmd BufNewFile,BufRead  * :RltvNmbr
 "Add Git Grep func
 func GitGrep(...)
   let save  = &grepprg
@@ -199,6 +199,8 @@ let g:tagbar_type_ruby = {
 set mouse=a
 map <leader>jra      :!bundle exec rspec --no-color <CR>
 map <leader>jrf      :!bundle exec rspec --no-color % <CR>
+map <leader>jma      :!bundle exec ruby test/test_helper.rb<CR>
+map <leader>jmf      :!bundle exec ruby %<CR>
 map <leader>jna      :!nosetests <CR>
 map <leader>rpf      :!python % <CR>
 map <leader>rrf      :!ruby %<CR>
@@ -211,6 +213,7 @@ map <leader>lcd      gg/class.*<CR>
 map <leader>lrp      /^ *p <CR>
 map <leader>eal      :Align & <CR>
 map <leader>eap      :Align => <CR>
+map <leader>eae      :Align = <CR>
 map <leader>epl      :PromoteToLet<cr>
 map <leader>orf      :call OpenSpec()<CR>
 map <leader>orv      :call VsplitSpec()<CR>
@@ -223,3 +226,23 @@ map <leader><space>  :BufExplorer<CR>
 map <leader>t        :NerdTreeToggle<CR>
 map <leader>g        :G
 map <leader>gst      :Gist<CR>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" RENAME CURRENT FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+map <leader>edc      :s/,/,\r/g<CR>(%i<CR><ESC>%a<CR><ESC>(%=%:%s/ *$//g<CR>:noh<CR>))
+
+
+command! Q  q  " Bind :Q  to :q
+command! W  w  " Bind :W  to :w
+command! Wq wq " Bind :Wq to :wq
+command! WQ wq " Bind :WQ to :wq

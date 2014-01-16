@@ -62,10 +62,10 @@ bash_prompt() {
     source "$HOME/.host_prompt_colours"
   else
     local PC1=$EMG
-    local PC2=$W
+    local PC2=$EMC
   fi
 
-	PS1="${W}[\t${W}] ${PC1}[${PC1}\u${PC1}@${PC1}\h ${PC2}\${NEW_PWD}\`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\\\\\*\ \(.+\)$/\ \(\\\\\\\\\1\)\/\`${PC1}] ${W}\\$ ${W}${NONE}"
+	PS1="${EMB}[\t${EMB}] ${PC1}[${PC1}\u${PC1}@${PC1}\h ${PC2}\${NEW_PWD}\`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\\\\\*\ \(.+\)$/\ \(\\\\\\\\\1\)\/\`${PC1}] ${EMB}\\$ ${EMB}${NONE}"
 }
 
 PROMPT_COMMAND=bash_prompt_command
