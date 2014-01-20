@@ -28,7 +28,7 @@ let g:MarkdownPreviewDefaultStyles = $HOME.'/.vim/stylesheets/'
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 set ofu=syntaxcomplete#Complete
 syntax on
-set background=dark
+set background=light
 let g:solarized_termcolors=16
 se t_Co=16
 colorscheme solarized

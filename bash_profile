@@ -62,10 +62,10 @@ bash_prompt() {
     source "$HOME/.host_prompt_colours"
   else
     local PC1=$EMG
-    local PC2=$W
+    local PC2=$EMC
   fi
 
-	PS1="${W}[\t${W}] ${PC1}[${PC1}\u${PC1}@${PC1}\h ${PC2}\${NEW_PWD}\`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\\\\\*\ \(.+\)$/\ \(\\\\\\\\\1\)\/\`${PC1}] ${W}\\$ ${W}${NONE}"
+	PS1="${EMC}[\t${EMC}] ${PC1}[${PC1}\u${PC1}@${PC1}\h ${PC2}\${NEW_PWD}\`git branch 2> /dev/null | grep -e ^* | sed -E  s/^\\\\\\\\\*\ \(.+\)$/\ \(\\\\\\\\\1\)\/\`${PC1}] ${EMC}\\$ ${EMC}${NONE}"
 }
 
 PROMPT_COMMAND=bash_prompt_command
@@ -74,9 +74,7 @@ unset bash_prompt
 shopt -s histappend
 PROMPT_COMMAND="$PROMPT_COMMAND;history -a"
 
-if [[ -s /etc/bash_completion.d/git ]] ; then source /etc/bash_completion.d/git ; fi
 if [[ -s /usr/local/etc/bash_completion.d/git-completion.bash ]] ; then source /usr/local/etc/bash_completion.d/git-completion.bash ; fi
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 function g {
   if [[ $# > 0 ]]
@@ -87,22 +85,21 @@ function g {
   fi
 }
 
-alias less='less -R'
-alias lock='xscreensaver-command -lock'
 alias be='bundle exec'
-alias ssh="TERM=xterm-color ssh"
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 export GEM_EDITOR="vim"
-export SCALA_HOME="/usr/local/scala"
-export _JAVA_AWT_WM_NONREPARENTING=1
-export CLICOLOR=1
-export BROWSER="chromium-browser"
-export DESKTOP_SESSION="xfce"
-export PATH=$HOME/.rvm/bin:$SCALA_HOME/bin:/home/tim/.cabal/bin:/home/tim/bin:$PATH
-complete -W "$(teamocil --list)" teamocil
+export PATH=/Users/tim/bin:$PATH
 if [[ -s "$HOME/.bash_private" ]]
 then
   source "$HOME/.bash_private"
 fi
 
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
+# TMUX
+if which tmux 2>&1 >/dev/null; then
+  # if no session is started, start a new session
+  test -z ${TMUX} && tmux
+fi
