@@ -17,7 +17,6 @@ set scrolloff=3
 set wrap
 set formatoptions=1
 set lbr
-set guifont=Mensch
 set mouse=a
 set noswapfile
 set grepprg=grep\ -nH\ $*
@@ -111,7 +110,6 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
-autocmd BufNewFile,BufRead  * :RltvNmbr
 "Add Git Grep func
 func GitGrep(...)
   let save  = &grepprg

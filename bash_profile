@@ -34,7 +34,7 @@ bash_prompt() {
 	local Y='\[\033[0;33m\]'    # yellow
 	local B='\[\033[0;34m\]'    # blue
 	local M='\[\033[0;35m\]'    # magenta
-	local C='\[\033[0;36m\]'    # cyan
+	local C='\[\033[0;36m\]'    # cyaN
 	local W='\[\033[0;37m\]'    # white
 
 	# empahsized (bolded) colors
@@ -89,7 +89,8 @@ alias be='bundle exec'
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 export GEM_EDITOR="vim"
-export PATH=/Users/tim/bin:$PATH
+export PATH=b:bin:/Users/tim/bin:/Users/tim/node_modules/.bin:/usr/local/share/python:/usr/local/bin:$PATH
+export PYTHONPATH=/usr/local/lib/python:$PYHTONPATH
 if [[ -s "$HOME/.bash_private" ]]
 then
   source "$HOME/.bash_private"
