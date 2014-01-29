@@ -52,3 +52,6 @@
 [submodule "lib/vimbundles/webapi-vim"]
 	path = lib/vimbundles/webapi-vim
 	url = git://github.com/mattn/webapi-vim.git
+[submodule "lib/vimbundles/ack.vim"]
+	path = lib/vimbundles/ack.vim
+	url = git@github.com:mileszs/ack.vim.git
