@@ -89,7 +89,7 @@ alias be='bundle exec'
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 export GEM_EDITOR="vim"
-export PATH=b:bin:/Users/tim/bin:/Users/tim/node_modules/.bin:/usr/local/share/python:/usr/local/bin:$PATH
+export PATH=b:bin:/Users/tim/bin:/Users/tim/.sp5repl:/Users/tim/node_modules/.bin:/usr/local/share/python:/usr/local/bin:$PATH
 export PYTHONPATH=/usr/local/lib/python:$PYHTONPATH
 if [[ -s "$HOME/.bash_private" ]]
 then
