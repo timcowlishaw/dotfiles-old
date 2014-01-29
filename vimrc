@@ -209,6 +209,7 @@ map <leader>lcd      gg/class.*<CR>
 map <leader>lrp      /^ *p <CR>
 map <leader>eal      :Align & <CR>
 map <leader>eap      :Align => <CR>
+map <leader>eae      :Align =  <CR>
 map <leader>epl      :PromoteToLet<cr>
 map <leader>orf      :call OpenSpec()<CR>
 map <leader>orv      :call VsplitSpec()<CR>
