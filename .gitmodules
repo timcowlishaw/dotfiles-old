@@ -61,3 +61,6 @@
 [submodule "lib/vimbundles/vim-ipython"]
 	path = lib/vimbundles/vim-ipython
 	url = git@github.com:ivanov/vim-ipython.git
+[submodule "lib/vimbundles/supertab"]
+	path = lib/vimbundles/supertab
+	url = git@github.com:ervandew/supertab.git

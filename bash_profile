@@ -110,3 +110,4 @@ export DOCKER_HOST=tcp://172.16.42.43:4243
 
 export SBT_OPTS="-Xmx1536M -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M  -Duser.timezone=GMT"
 shopt -s checkwinsize
+stty stop undef #unmap ctrl-S

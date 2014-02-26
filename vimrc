@@ -1,3 +1,6 @@
+set nocompatible
+syntax on
+filetype plugin indent on
 call pathogen#infect()
 
 vnoremap <Left> h
@@ -209,7 +212,7 @@ map <leader>lcd      gg/class.*<CR>
 map <leader>lrp      /^ *p <CR>
 map <leader>eal      :Align & <CR>
 map <leader>eap      :Align => <CR>
-map <leader>eae      :Align =<CR>
+map <leader>eae      :Align = <CR>
 map <leader>ea{      :Align {<CR>
 map <leader>epl      :PromoteToLet<cr>
 map <leader>orf      :call OpenSpec()<CR>
@@ -221,13 +224,15 @@ map <leader>bi       :!bundle install
 map <leader><leader> :noh<CR>
 map <leader><space>  :BufExplorer<CR>
 map <leader>t        :NERDTreeToggle<CR>
-map <leader>g        :G
-map <leader>a        :Ack
+map <leader>g        :G<Space>
+map <leader>a        :Ack<Space>
 map <leader>gst      :Gist<CR>
-map <leader>d        :DiffOrig<CR>
+map <leader>dif      :DiffOrig<CR>
 map <leader>l        :TagbarToggle<CR>
 map <leader>enl      :EvervimNotebookList<CR>
 map <leader>ecn      :EvervimCreateNote<CR>
+map <leader>ipy      :IPython<CR>
+map <leader>ipc      :IPythonClipbaord<CR>
 function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
