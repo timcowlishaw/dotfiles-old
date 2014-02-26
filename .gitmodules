@@ -58,3 +58,6 @@
 [submodule "lib/vimbundles/evervim"]
 	path = lib/vimbundles/evervim
 	url = git@github.com:kakkyz81/evervim.git
+[submodule "lib/vimbundles/vim-ipython"]
+	path = lib/vimbundles/vim-ipython
+	url = git@github.com:ivanov/vim-ipython.git
