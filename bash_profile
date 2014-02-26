@@ -86,6 +86,7 @@ function g {
 }
 
 alias be='bundle exec'
+alias ack-grep='ack'
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 export GEM_EDITOR="vim"
@@ -104,3 +105,8 @@ if which tmux 2>&1 >/dev/null; then
   # if no session is started, start a new session
   test -z ${TMUX} && tmux
 fi
+
+export DOCKER_HOST=tcp://172.16.42.43:4243
+
+export SBT_OPTS="-Xmx1536M -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M  -Duser.timezone=GMT"
+shopt -s checkwinsize

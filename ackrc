@@ -9,3 +9,4 @@
 --ignore-dir=.eunit
 --ignore-dir=release
 --ignore-dir=cbenv
+--ignore-dir=coverage

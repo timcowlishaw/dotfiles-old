@@ -24,7 +24,6 @@ let g:NERDTreeChDirMode=0
 let g:tex_flavor='latex'
 let g:MarkdownPreviewTMP=$HOME.'/.vim/tmp/'
 let g:MarkdownPreviewDefaultStyles = $HOME.'/.vim/stylesheets/'
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 set ofu=syntaxcomplete#Complete
 syntax on
 set background=light
@@ -53,6 +52,7 @@ set wmh=0
 vmap r "_dP
 
 com T :NERDTreeToggle
+com A :Ack
 command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
 "...and for NerdTree:
@@ -209,7 +209,8 @@ map <leader>lcd      gg/class.*<CR>
 map <leader>lrp      /^ *p <CR>
 map <leader>eal      :Align & <CR>
 map <leader>eap      :Align => <CR>
-map <leader>eae      :Align =  <CR>
+map <leader>eae      :Align =<CR>
+map <leader>ea{      :Align {<CR>
 map <leader>epl      :PromoteToLet<cr>
 map <leader>orf      :call OpenSpec()<CR>
 map <leader>orv      :call VsplitSpec()<CR>
@@ -217,8 +218,24 @@ map <leader>ors      :e .rspec<CR>
 map <leader>ovr      :e ~/.vimrc<CR>
 nnoremap <leader>h <Esc>:call HardMode()<CR>
 map <leader>bi       :!bundle install
-map <leader><leader> gt
+map <leader><leader> :noh<CR>
 map <leader><space>  :BufExplorer<CR>
-map <leader>t        :NerdTreeToggle<CR>
+map <leader>t        :NERDTreeToggle<CR>
 map <leader>g        :G
+map <leader>a        :Ack
 map <leader>gst      :Gist<CR>
+map <leader>d        :DiffOrig<CR>
+map <leader>l        :TagbarToggle<CR>
+map <leader>enl      :EvervimNotebookList<CR>
+map <leader>ecn      :EvervimCreateNote<CR>
+function! RenameFile()
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <leader>n :call RenameFile()<cr>
+let g:evervim_devtoken="S=s2:U=9f6fb:E=14b49ebdc47:C=143f23ab049:P=1cd:A=en-devtoken:V=2:H=b8ed4c4264cd58f9455ed14e77260335"

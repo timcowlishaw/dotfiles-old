@@ -55,3 +55,6 @@
 [submodule "lib/vimbundles/ack.vim"]
 	path = lib/vimbundles/ack.vim
 	url = git@github.com:mileszs/ack.vim.git
+[submodule "lib/vimbundles/evervim"]
+	path = lib/vimbundles/evervim
+	url = git@github.com:kakkyz81/evervim.git
