@@ -90,8 +90,9 @@ alias ack-grep='ack'
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 export GEM_EDITOR="vim"
-export PATH=b:bin:/Users/tim/bin:/Users/tim/.sp5repl:/Users/tim/node_modules/.bin:/usr/local/share/python:/usr/local/bin:$PATH
-export PYTHONPATH=/usr/local/lib/python:$PYHTONPATH
+export PATH=b:bin:/Users/tim/bin:/Users/tim/.activator:/Users/tim/.cabal/bin:/Users/tim/.sp5repl:/Users/tim/node_modules/.bin:/usr/texbin:/Developer/NVIDIA/CUDA-5.5/bin:/usr/local/share/python:/usr/local/bin:$PATH
+export PYTHONPATH=/Users/tim/.cudamat:/usr/local/lib/python:$PYTHONPATH
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
 if [[ -s "$HOME/.bash_private" ]]
 then
   source "$HOME/.bash_private"
