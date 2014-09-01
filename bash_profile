@@ -110,7 +110,9 @@ if which tmux 2>&1 >/dev/null; then
 fi
 
 export DOCKER_HOST=tcp://172.16.42.43:4243
-
+export VM_MEMORY=4096
 export SBT_OPTS="-Xmx1536M -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M  -Duser.timezone=GMT"
 shopt -s checkwinsize
 stty stop undef #unmap ctrl-S
+alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+ssh-add 2>/dev/null
