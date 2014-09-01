@@ -98,10 +98,20 @@ then
   source "$HOME/.bash_private"
 fi
 
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+if [[ -s "/usr/local/opt/chruby/share/chruby/chruby.sh" ]]
+then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+fi
 
-source virtualenvwrapper.sh
+if [[ -s "/usr/local/opt/chruby/share/chruby/auto.sh" ]]
+then
+  source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
+
+if [[ -s "virtualenvwrapper.sh" ]]
+then
+ source virtualenvwrapper.sh
+fi
 
 # TMUX
 if which tmux 2>&1 >/dev/null; then
