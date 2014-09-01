@@ -233,6 +233,7 @@ map <leader>enl      :EvervimNotebookList<CR>
 map <leader>ecn      :EvervimCreateNote<CR>
 map <leader>ipy      :IPython<CR>
 map <leader>ipc      :IPythonClipbaord<CR>
+map <leader>jf       :%! python -m json.tool<CR>
 function! RenameFile()
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
