@@ -64,3 +64,15 @@
 [submodule "lib/vimbundles/supertab"]
 	path = lib/vimbundles/supertab
 	url = git@github.com:ervandew/supertab.git
+[submodule "lib/vimbundles/typescript-vim"]
+	path = lib/vimbundles/typescript-vim
+	url = git@github.com:leafgarland/typescript-vim.git
+[submodule "lib/vimbundles/mustache"]
+	path = lib/vimbundles/mustache
+	url = git://github.com/mustache/vim-mode.git
+[submodule "lib/vimbundles/vim-commentary"]
+	path = lib/vimbundles/vim-commentary
+	url = git://github.com/tpope/vim-commentary.git
+[submodule "lib/vimbundles/vim-gitgutter"]
+	path = lib/vimbundles/vim-gitgutter
+	url = git://github.com/airblade/vim-gitgutter.git
