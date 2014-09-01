@@ -10,3 +10,5 @@
 --ignore-dir=release
 --ignore-dir=cbenv
 --ignore-dir=coverage
+--ignore-dir=target
+--ignore-dir=project/target
