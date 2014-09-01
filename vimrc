@@ -102,7 +102,7 @@ set foldlevelstart=20
 set textwidth=80
 set colorcolumn=+1
 set showcmd
-
+autocmd BufRead,BufNewFile *.md set filetype=markdown
 command! PrettyXML call DoPrettyXML()
 
 "Strip trailing whitespace on save!
