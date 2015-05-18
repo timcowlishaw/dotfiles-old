@@ -26,11 +26,18 @@
         untracked = cyan
 [alias]
 	permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
+  add-nw = !sh -c 'git diff -w --no-color "$@" | git apply --cached --ignore-whitespace' -
 [push]
-	default = current
+	default = simple
 [branch]
 	autosetuprebase = always
 [github]
 	user = timcowlishaw
 [core]
 	excludesfile = /Users/tim/.gitignore_global
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+[branch "master"]
+	mergeoptions = --no-ff

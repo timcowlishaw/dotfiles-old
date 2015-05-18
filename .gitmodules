@@ -76,3 +76,12 @@
 [submodule "lib/vimbundles/vim-gitgutter"]
 	path = lib/vimbundles/vim-gitgutter
 	url = git://github.com/airblade/vim-gitgutter.git
+[submodule "lib/vimbundles/textgenshi"]
+	path = lib/vimbundles/textgenshi
+	url = git@github.com:weiss/textgenshi.vim.git
+[submodule "lib/vimbundles/genshi.vim"]
+	path = lib/vimbundles/genshi.vim
+	url = git@github.com:dag/genshi.vim.git
+[submodule "lib/vimbundles/syntastic"]
+	path = lib/vimbundles/syntastic
+	url = git@github.com:scrooloose/syntastic.git

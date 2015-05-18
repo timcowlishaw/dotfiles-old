@@ -245,3 +245,12 @@ function! RenameFile()
 endfunction
 map <leader>n :call RenameFile()<cr>
 let g:evervim_devtoken="S=s2:U=9f6fb:E=14b49ebdc47:C=143f23ab049:P=1cd:A=en-devtoken:V=2:H=b8ed4c4264cd58f9455ed14e77260335"
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0

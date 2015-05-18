@@ -95,9 +95,10 @@ alias ack-grep='ack'
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 export GEM_EDITOR="vim"
-export PATH=b:bin:/Users/tim/bin:/Users/tim/.activator:/Users/tim/.cabal/bin:/Users/tim/.sp5repl:/Users/tim/node_modules/.bin:/usr/texbin:/Developer/NVIDIA/CUDA-5.5/bin:/usr/local/share/python:/usr/local/bin:$PATH
+export PATH=b:bin:/Users/tim/bin:/Users/tim/.activator:/Users/tim/.cabal/bin:/Users/tim/.sp5repl:/Users/tim/node_modules/.bin:/Applications/MATLAB_R2015a.app/bin:/usr/texbin:/Developer/NVIDIA/CUDA-5.5/bin:/usr/local/share/python:/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home/bin:/usr/local/bin:$PATH
 export PYTHONPATH=/Users/tim/.cudamat:/usr/local/lib/python:$PYTHONPATH
-export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home
+#export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-5.5/lib:$DYLD_LIBRARY_PATH
 if [[ -s "$HOME/.bash_private" ]]
 then
   source "$HOME/.bash_private"
@@ -127,6 +128,7 @@ fi
 export DOCKER_HOST=tcp://172.16.42.43:4243
 export VM_MEMORY=4096
 export SBT_OPTS="-Xmx1536M -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M  -Duser.timezone=GMT"
+export ANDROID_HOME=/usr/local/opt/android-sdk
 shopt -s checkwinsize
 stty stop undef #unmap ctrl-S
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
