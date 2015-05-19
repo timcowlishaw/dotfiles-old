@@ -85,3 +85,6 @@
 [submodule "lib/vimbundles/syntastic"]
 	path = lib/vimbundles/syntastic
 	url = git@github.com:scrooloose/syntastic.git
+[submodule "lib/vimbundles/vim-fsharp"]
+	path = lib/vimbundles/vim-fsharp
+	url = git@github.com:fsharp/vim-fsharp.git
